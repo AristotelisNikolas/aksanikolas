@@ -18,16 +18,3 @@ spec:
       - name: centos
         image: centos
         command: ["sh", "-c", "while true; do echo Hello AKS; sleep 3600; done"]
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: centos-service
-spec:
-  selector:
-    app: centos
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: LoadBalancer
